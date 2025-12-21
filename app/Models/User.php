@@ -43,6 +43,11 @@ class User extends Authenticatable
     {
         return true;
     }
+    public function canAccessFilament(): bool
+    {
+        \Log::info('Filament check for user: '.$this->email);
+        return true;
+    }
     protected function casts(): array
     {
         return [
