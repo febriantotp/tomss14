@@ -39,6 +39,10 @@ class User extends Authenticatable
      *
      * @return array<string, string>
      */
+    public function canAccessFilament(): bool
+    {
+        return $this->is_admin == 1;
+    }
     protected function casts(): array
     {
         return [
