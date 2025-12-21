@@ -99,6 +99,9 @@ return [
 
     'key' => env('APP_KEY'),
 
+    'provider' => [
+        App\Providers\Filament\Supertomss14PanelProvider::class,],
+
     'previous_keys' => [
         ...array_filter(
             explode(',', env('APP_PREVIOUS_KEYS', ''))
