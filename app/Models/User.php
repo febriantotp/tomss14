@@ -45,6 +45,8 @@ class User extends Authenticatable implements FilamentUser
     public function canAccessPanel(Panel $panel): bool
     {
         // Untuk tes, izinkan semua user
+        \Log::info('Filament check for user: '.$this->email.' on panel '.$panel->getId());
+
         return true;
     
         // Atau kalau mau khusus panel tertentu:
