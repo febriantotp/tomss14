@@ -19,6 +19,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Filament::registerPanels(require base_path('bootstrap/providers.php'));
+
         if (app()->environment('production')) {
         $publicStorage = public_path('storage');
         if (!is_link($publicStorage)) {
