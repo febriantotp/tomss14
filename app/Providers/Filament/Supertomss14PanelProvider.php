@@ -27,6 +27,7 @@ class Supertomss14PanelProvider extends PanelProvider
             ->id('supertomss14')
             ->path('supertomss14')
             ->login()
+            ->authGuard('web')
             ->colors([
                 'primary' => Color::Amber,
             ])
