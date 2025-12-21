@@ -39,14 +39,13 @@ class User extends Authenticatable
      *
      * @return array<string, string>
      */
-    public function canAccessFilament(): bool
+    public function canAccessPanel(\Filament\Panel $panel): bool
     {
+        // Untuk tes, izinkan semua user
         return true;
-    }
-    public function canAccessFilament(): bool
-    {
-        \Log::info('Filament check for user: '.$this->email);
-        return true;
+    
+        // Atau kalau mau khusus panel tertentu:
+        // return $panel->getId() === 'supertomss14' && $this->is_admin == 1;
     }
     protected function casts(): array
     {
