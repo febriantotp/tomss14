@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Filament\Models\Contracts\FilamentUser;
+use Illuminate\Support\Facades\Log;
 use Filament\Panel;
 
 
@@ -46,8 +47,9 @@ class User extends Authenticatable implements \Filament\Models\Contracts\Filamen
     public function canAccessPanel(\Filament\Panel $panel): bool
     {
 
+    Log::info('Filament check for user '.$this->email.' on panel '.$panel->getId());
+    return true;
 
-        return true;
     
         // Atau kalau mau khusus panel tertentu:
         // return $panel->getId() === 'supertomss14' && $this->is_admin == 1;
