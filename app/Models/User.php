@@ -10,7 +10,8 @@ use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
 
 
-class User extends Authenticatable implements FilamentUser
+class User extends Authenticatable implements \Filament\Models\Contracts\FilamentUser
+
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
@@ -42,10 +43,9 @@ class User extends Authenticatable implements FilamentUser
      *
      * @return array<string, string>
      */
-    public function canAccessPanel(Panel $panel): bool
+    public function canAccessPanel(\Filament\Panel $panel): bool
     {
-        // Untuk tes, izinkan semua user
-        \Log::info('Filament check for user: '.$this->email.' on panel '.$panel->getId());
+
 
         return true;
     
