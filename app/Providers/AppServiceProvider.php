@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
         // Daftarkan panel dari bootstrap/providers.php
         Log::info('AppServiceProvider boot start');
 
-        Filament::registerPanels(require base_path('bootstrap/providers.php'));
+        // Filament::registerPanels(require base_path('bootstrap/providers.php'));
         Log::info('AppServiceProvider boot end');
 
         
