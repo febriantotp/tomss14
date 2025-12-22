@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Log;
 use Filament\Panel;
 
 
-class User extends Authenticatable implements \Filament\Models\Contracts\FilamentUser
+class User extends Authenticatable implements FilamentUser
 
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
@@ -44,7 +44,7 @@ class User extends Authenticatable implements \Filament\Models\Contracts\Filamen
      *
      * @return array<string, string>
      */
-    public function canAccessPanel(\Filament\Panel $panel): bool
+    public function canAccessPanel(Panel $panel): bool
     {
 
     Log::info('Filament check for user '.$this->email.' on panel '.$panel->getId());
