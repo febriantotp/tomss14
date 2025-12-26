@@ -22,17 +22,17 @@ Route::get('/games/{slug}', GameDetailPage::class)->name('game.detail');
 Route::post('/req-game', [GameController::class, 'store'])->name('req-game');
 
 
-// Rute GameRequest
-Route::post('/game-requests', function (Request $request) {
-    $validated = $request->validate([
-        'game_name' => 'required|string|max:255',
-        'platform_id' => 'required|integer|exists:platforms,id',
-    ]);
+// // Rute GameRequest
+// Route::post('/game-requests', function (Request $request) {
+//     $validated = $request->validate([
+//         'game_name' => 'required|string|max:255',
+//         'platform_id' => 'required|integer|exists:platforms,id',
+//     ]);
 
-    GameRequest::create($validated);
+//     GameRequest::create($validated);
 
-    return response()->json(['message' => 'Game request submitted successfully!']);
-});
+//     return response()->json(['message' => 'Game request submitted successfully!']);
+// });
 
 // Rute Controller
 Route::prefix('/manage-games')->group(function () {
