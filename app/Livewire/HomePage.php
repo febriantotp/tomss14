@@ -42,7 +42,7 @@ class HomePage extends Component
      * @param int|null $platformId (optional) Platform ID to filter.
      * @return \Illuminate\Support\Collection
      */
-    private function fetchGames(int $platformId = null, int $limit = 10, string $sortBy = 'recent')
+    private function fetchGames(?int $platformId = null, int $limit = 10, string $sortBy = 'recent')
     {
         $query = DB::table('games as g')
             ->select(
