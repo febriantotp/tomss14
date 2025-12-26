@@ -3,6 +3,8 @@
 namespace App\Providers\Filament;
 
 use Filament\Http\Middleware\Authenticate;
+use Illuminate\Contracts\Auth\Authenticatable;
+
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Pages;
@@ -54,5 +56,14 @@ class Supertomss14PanelProvider extends PanelProvider
                 DispatchServingFilamentEvent::class,
             ])
         ;
+    }
+
+    public function getUserAvatarUrl(Authenticatable $user): ?string
+    {
+        return 'https://ui-avatars.com/api/?name=' . urlencode($user->name);
+    }
+    public function getAvatarUrl(Authenticatable $user): ?string
+    {
+        return 'https://ui-avatars.com/api/?name=' . urlencode($user->name);
     }
 }
