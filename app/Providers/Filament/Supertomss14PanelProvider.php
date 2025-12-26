@@ -45,6 +45,7 @@ class Supertomss14PanelProvider extends PanelProvider
                 \App\Filament\Widgets\TotalUploadedGames::class, // Tambahkan widget ini
             ])
             ->middleware([
+                'web', 'auth',
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
                 StartSession::class,
